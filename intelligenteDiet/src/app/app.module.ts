@@ -1,16 +1,26 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule }       from '@angular/core';
+import { BrowserModule }  from '@angular/platform-browser';
+import { FormsModule }    from '@angular/forms';
+import { AppComponent }         from './app.component';
 
-import { AppComponent } from './app.component';
+import { RegisterComponent } from './register/register.component';
+import { PreferencesComponent } from './preferences/preferences.component';
+import { DietComponent } from './diet/diet.component';
+
+import { AppRoutingModule }     from './app-router.module';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    AppRoutingModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  declarations: [
+    AppComponent,
+    RegisterComponent,
+    PreferencesComponent,
+    DietComponent
+  ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }
