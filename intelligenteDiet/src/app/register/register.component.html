@@ -1,3 +1,43 @@
-<p>
-  register works!
-</p>
+<div id="registerForm" >
+    <form name="form">
+          <div>
+            <h4 translate> Perfil </h4>
+          </div>
+          <div class="form-group">
+            <div>
+              <label class="control-label" for="type" translate>SEXO</label>
+            </div>
+            <div>
+              <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-secondary" (click)="setGender('Homem')">Homem</button>
+                <button type="button" class="btn btn-secondary" (click)="setGender('Mulher')">Mulher</button>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label" for="type" translate>IDADE</label>
+            <input type="number" id="age" class="form-control" name="age" [(ngModel)]="profile.age" #age="ngModel" required/>
+          </div>
+          <div class="form-group">
+            <label class="control-label" for="type" translate>Altura</label>
+            <input type="number" id="height" class="form-control" name="height" [(ngModel)]="profile.height" #height="ngModel" required/>
+          </div>
+          <div class="form-group">
+            <label class="control-label" for="type" translate>PESO</label>
+            <input type="number" id="weight" class="form-control" name="weight" [(ngModel)]="profile.weight" #weight="ngModel" required/>
+          </div>
+          <div class="form-group">
+            <div>
+              <label class="control-label" for="type" translate>OBJETIVO</label>
+            </div>
+            <div>
+              <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-secondary" (click)="setGoal('Emagrecer')">Emagrecer</button>
+                <button type="button" class="btn btn-secondary" (click)="setGoal('Manter')">Manter</button>
+                <button type="button" class="btn btn-secondary" (click)="setGoal('Engordar')">Engordar</button>
+              </div>
+            </div>
+          </div>
+          <button (click)="nextStep()" class="btn btn-primary"> Próximo passo </button>
+    </form>
+</div>

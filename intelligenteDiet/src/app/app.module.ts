@@ -8,6 +8,7 @@ import { PreferencesComponent } from './preferences/preferences.component';
 import { DietComponent } from './diet/diet.component';
 
 import { AppRoutingModule }     from './app-router.module';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { AppRoutingModule }     from './app-router.module';
     AppComponent,
     RegisterComponent,
     PreferencesComponent,
-    DietComponent
+    DietComponent,
+    HomeComponent
   ],
   bootstrap: [ AppComponent ]
 })

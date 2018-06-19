@@ -7,9 +7,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+  profile;
+
+  constructor() {
+    this.profile = {};
+  }
+
+  public setGender = function(gender){
+    this.profile.gender = gender;
+  }
+
+  public setGoal = function(goal){
+    this.profile.goal = goal;
+  }
+
+  public nextStep = function() {
+    console.log(this.profile);
+  }
 
   ngOnInit() {
   }
+
+
 
 }
