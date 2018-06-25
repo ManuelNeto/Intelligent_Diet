@@ -16,15 +16,16 @@
           </div>
           <div class="form-group">
             <label class="control-label" for="type" translate>IDADE</label>
-            <input type="number" id="age" class="form-control" name="age" [(ngModel)]="profile.age" #age="ngModel" required/>
+            <input type="number" id="age" class="form-control" name="age" placeholder="OBS: em anos" [(ngModel)]="profile.age" #age="ngModel" required/>
+
           </div>
           <div class="form-group">
             <label class="control-label" for="type" translate>Altura</label>
-            <input type="number" id="height" class="form-control" name="height" [(ngModel)]="profile.height" #height="ngModel" required/>
+            <input type="number" id="height" class="form-control" name="height" placeholder="Ex: 1,80 (obs: em metros)" step="0.1" [(ngModel)]="profile.height" #height="ngModel" required/>
           </div>
           <div class="form-group">
             <label class="control-label" for="type" translate>PESO</label>
-            <input type="number" id="weight" class="form-control" name="weight" [(ngModel)]="profile.weight" #weight="ngModel" required/>
+            <input type="number" id="weight" class="form-control" name="weight" placeholder="Ex: 78,5 (obs: em Kg)" step="0.1" [(ngModel)]="profile.weight" #weight="ngModel" required/>
           </div>
           <div class="form-group">
             <div>
