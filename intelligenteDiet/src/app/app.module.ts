@@ -6,6 +6,7 @@ import { AppComponent }         from './app.component';
 import { RegisterComponent } from './register/register.component';
 import { PreferencesComponent } from './preferences/preferences.component';
 import { DietComponent } from './diet/diet.component';
+import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect';
 
 import { AppRoutingModule }     from './app-router.module';
 import { HomeComponent } from './home/home.component';
@@ -14,7 +15,8 @@ import { HomeComponent } from './home/home.component';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MultiselectDropdownModule
   ],
   declarations: [
     AppComponent,

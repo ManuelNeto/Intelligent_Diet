@@ -1,3 +1,39 @@
-<p>
-  preferences works!
-</p>
+<div id="preferencesForm" >
+  <form name="form">
+    <div>
+      <h4 translate> Preferências </h4>
+    </div>
+    <div class="form-group">
+      <div>
+        <label class="control-label" for="type" translate> Proteinas </label>
+      </div>
+      <div>
+        <ss-multiselect-dropdown [options]="myProteinOptions" [(ngModel)]="proteinOptions" (ngModelChange)="onChange($event)"></ss-multiselect-dropdown>
+      </div>
+    </div>
+    <div class="form-group">
+      <div>
+        <label class="control-label" for="type" translate> Massas </label>
+      </div>
+      <div>
+        <ss-multiselect-dropdown [options]="myPastaOptions" [(ngModel)]="pastaOptions" (ngModelChange)="onChange($event)"></ss-multiselect-dropdown>
+      </div>
+    </div>
+    <div class="form-group">
+      <div>
+        <label class="control-label" for="type" translate> Fibras </label>
+      </div>
+      <div>
+        <ss-multiselect-dropdown [options]="myFiberOptions" [(ngModel)]="fiberOptions" (ngModelChange)="onChange($event)"></ss-multiselect-dropdown>
+      </div>
+    </div>
+    <div class="form-group">
+      <div>
+        <label class="control-label" for="type" translate> Frutas </label>
+      </div>
+      <div>
+        <ss-multiselect-dropdown [options]="myFruitOptions" [(ngModel)]="fruitOptions" (ngModelChange)="onChange($event)"></ss-multiselect-dropdown>
+      </div>
+    </div>
+  </form>
+</div>
