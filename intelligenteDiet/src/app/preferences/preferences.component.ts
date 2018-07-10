@@ -33,7 +33,7 @@ export class PreferencesComponent implements OnInit {
             { id: 6, name: 'Frango desfiado'},
             { id: 7, name: 'Peixe grelhado'},
             { id: 8, name: 'Carne magra'},
-            { id: 9, name: 'Omelete'},
+            { id: 9, name: 'Omelete'}
         ];
 
         this.myPastaOptions = [
