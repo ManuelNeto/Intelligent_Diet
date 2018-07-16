@@ -25,7 +25,15 @@ var User = new Schema({
     diet: {
 			type: mongoose.Schema.Types.ObjectId,
 			ref: 'Diet'
-		}
+		},
+    levelOfPhysicalActivity: {
+        type: String,
+        required: true
+    },
+    totalDailyCalories: {
+        type: Number
+    }
+
 });
 
 module.exports = mongoose.model('User', User);

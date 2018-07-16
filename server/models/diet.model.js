@@ -3,6 +3,9 @@ var Schema    = mongoose.Schema;
 
 var Diet = new Schema({
 
+  score:{
+      type: Number
+  },
   breakfast: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Alimento',
