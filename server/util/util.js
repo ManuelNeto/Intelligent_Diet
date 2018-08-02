@@ -3,16 +3,28 @@ const LEVE = 1.375;
 const MODERADO = 1.550;
 const INTENSO = 1.725;
 
+function _calculateCarbo(cal){
+
+
+}
+function _calculateProtein(cal){
+
+
+}
+function _calculateFat(cal){
+
+
+}
 
 function _calculateTotalDailyCalories(user) {
   if(user.levelOfPhysicalActivity == "sedentario"){
-    return calculateTBM(user) * SEDENTARIO;
+    return onGoal(user,calculateTBM(user) * SEDENTARIO);
   }else if(user.levelOfPhysicalActivity == "leve"){
-    return calculateTBM(user) * LEVE;
+    return onGoal(user,calculateTBM(user) * LEVE);
   }else if(user.levelOfPhysicalActivity == "moderado"){
-    return calculateTBM(user) * MODERADO;
+    return onGoal(user,calculateTBM(user) * MODERADO);
   }else{
-    return calculateTBM(user) * INTENSO;
+    return onGoal(user,calculateTBM(user) * INTENSO);
   }
 }
 
@@ -24,7 +36,20 @@ function calculateTBM(user) {
   }
 }
 
+function onGoal(user,  totalCal){
+  if(user.goal == "Emagrecer"){
+    return totalCal - totalCal * 0.2;
+  }else if(user.goal == "Engordar"){
+      return totalCal + totalCal * 0.2;
+  }else{
+    return totalCal
+  }
+}
+
 
 module.exports = {
-	calculateTotalDailyCalories: _calculateTotalDailyCalories
+	calculateTotalDailyCalories: _calculateTotalDailyCalories;
+    calculateCarbo = _calculateCarbo;
+    calculateProtein = _calculateProtein;
+    calculateFat = _calculateFat;
 };

@@ -8,9 +8,12 @@
               <label class="control-label" for="type" translate>SEXO</label>
             </div>
             <div>
-              <div class="btn-group" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-secondary" (click)="setGender('Homem')">Homem</button>
-                <button type="button" class="btn btn-secondary" (click)="setGender('Mulher')">Mulher</button>
+              <div class="form-group">
+                <label class="control-label" for="gender" translate> Sexo </label>
+                <select class="form-control" id="gender" name="gender" [(ngModel)]="profile.gender">
+                  <option value="Homem"> Homem </option>
+                  <option value="Mulher"> Mulher</option>
+                </select>
               </div>
             </div>
           </div>
@@ -41,13 +44,16 @@
               <label class="control-label" for="type" translate>OBJETIVO</label>
             </div>
             <div>
-              <div class="btn-group" role="group" aria-label="Basic example">
-                <button mat-raised-button type="button" class="btn btn-secondary" (click)="setGoal('Emagrecer')">Emagrecer</button>
-                <button mat-raised-button type="button" class="btn btn-secondary" (click)="setGoal('Manter')">Manter</button>
-                <button mat-raised-button type="button" class="btn btn-secondary" (click)="setGoal('Engordar')">Engordar</button>
+              <div class="form-group">
+                <label class="control-label" for="goal" translate> Meta </label>
+                <select class="form-control" id="goal" name="levelOfPhysicalActivity" [(ngModel)]="profile.goal">
+                  <option value="Emagrecer"> Emagrecer </option>
+                  <option value="Manter"> Manter</option>
+                  <option value="Engordar">Engordar </option>
+                </select>
               </div>
             </div>
           </div>
-          <button (click)="nextStep()" class="btn btn-primary"> Próximo passo </button>
+          <button mat-raised-button (click)="nextStep()" class="btn btn-primary"> Próximo passo </button>
     </form>
 </div>

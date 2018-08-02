@@ -32,6 +32,15 @@ var User = new Schema({
     },
     totalDailyCalories: {
         type: Number
+    },
+    carbo:{
+        type: Number
+    },
+    protein:{
+        type:Number
+    },
+    fat:{
+        type: Number
     }
 
 });

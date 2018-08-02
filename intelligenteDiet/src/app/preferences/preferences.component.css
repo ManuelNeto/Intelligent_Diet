@@ -1,0 +1,10 @@
+button:hover{
+  background: deepskyblue;
+}
+button:focus{
+  background: deepskyblue;
+}
+
+button {
+  margin-top: 15px;
+}

@@ -5,7 +5,7 @@
     </div>
     <div class="form-group">
       <div>
-        <label class="control-label" for="type" translate> Proteinas </label>
+        <label class="control-label" for="type" translate> Proteínas </label>
       </div>
       <div>
         <ss-multiselect-dropdown [options]="myProteinOptions" name="proteins" [(ngModel)]="proteinOptions" (ngModelChange)="onChange($event)"></ss-multiselect-dropdown>
@@ -13,7 +13,7 @@
     </div>
     <div class="form-group">
       <div>
-        <label class="control-label" for="type" translate> Massas </label>
+        <label class="control-label" for="type" translate> Caboidratos </label>
       </div>
       <div>
         <ss-multiselect-dropdown [options]="myPastaOptions" name="massas" [(ngModel)]="pastaOptions" (ngModelChange)="onChange($event)"></ss-multiselect-dropdown>
@@ -29,11 +29,20 @@
     </div>
     <div class="form-group">
       <div>
+        <label class="control-label" for="type" translate> Legumes </label>
+      </div>
+      <div>
+        <ss-multiselect-dropdown [options]="myVegetableOptions" name="legumes" [(ngModel)]="vegetableOptions" (ngModelChange)="onChange($event)"></ss-multiselect-dropdown>
+      </div>
+    </div>
+    <div class="form-group">
+      <div>
         <label class="control-label" for="type" translate> Frutas </label>
       </div>
       <div>
         <ss-multiselect-dropdown [options]="myFruitOptions" name="frutas" [(ngModel)]="fruitOptions" (ngModelChange)="onChange($event)"></ss-multiselect-dropdown>
       </div>
     </div>
+    <button mat-raised-button class="btn btn-secondary" (click)="generateDiet()">Gerar dieta</button>
   </form>
 </div>
