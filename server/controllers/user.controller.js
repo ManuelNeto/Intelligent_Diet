@@ -10,8 +10,8 @@ exports.save = async function (req,res){
       goal:req.body.goal,
       levelOfPhysicalActivity:req.body.levelOfPhysicalActivity,
       totalDailyCalories: Util.calculateTotalDailyCalories(req.body),
-      carbo: Util.calculateCarbo(Util.calculateTotalDailyCalories(req.body)),
-      protein: Util.calculateProtein(Util.calculateTotalDailyCalories(req.body)),
+      carbo: Util.calculateCarbo(Util.calculateTotalDailyCalories(req.body), Util.calculateProtein(req.body.weight), Util.calculateFat(Util.calculateTotalDailyCalories(req.body))),
+      protein: Util.calculateProtein(req.body.weight),
       fat: Util.calculateFat(Util.calculateTotalDailyCalories(req.body))
     });
 

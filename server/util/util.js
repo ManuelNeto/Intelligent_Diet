@@ -3,17 +3,17 @@ const LEVE = 1.375;
 const MODERADO = 1.550;
 const INTENSO = 1.725;
 
-function _calculateCarbo(cal){
 
-
-}
-function _calculateProtein(cal){
-
+function _calculateProtein(peso){
+    return peso * 1.83;
 
 }
 function _calculateFat(cal){
+    return (cal*0.25/9)
+}
 
-
+function _calculateCarbo(carboTotal, protein, fat){
+    return (carboTotal - protein *4 - fat*9)/4
 }
 
 function _calculateTotalDailyCalories(user) {
@@ -48,8 +48,8 @@ function onGoal(user,  totalCal){
 
 
 module.exports = {
-	calculateTotalDailyCalories: _calculateTotalDailyCalories;
-    calculateCarbo = _calculateCarbo;
-    calculateProtein = _calculateProtein;
-    calculateFat = _calculateFat;
+	calculateTotalDailyCalories: _calculateTotalDailyCalories,
+    calculateProtein: _calculateProtein,
+    calculateFat: _calculateFat,
+    calculateCarbo: _calculateCarbo
 };
