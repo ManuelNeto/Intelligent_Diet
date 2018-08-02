@@ -30,7 +30,7 @@ export class AlimentoService {
   updateAlimento(alimento: Alimento) {
     const url = this.API + '/updateAlimento';
     return this.http.put(url, alimento);
-  }c
+  }
 
   deleteAlimento(id) {
     const url = this.API + '/deleteAlimento/' + id;

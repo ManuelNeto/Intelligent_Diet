@@ -9,14 +9,18 @@ exports.save = async function (req,res){
       weight:req.body.weight,
       goal:req.body.goal,
       levelOfPhysicalActivity:req.body.levelOfPhysicalActivity,
-      totalDailyCalories: Util.calculateTotalDailyCalories(req.body)
+      totalDailyCalories: Util.calculateTotalDailyCalories(req.body),
+      carbo: Util.calculateCarbo(Util.calculateTotalDailyCalories(req.body)),
+      protein: Util.calculateProtein(Util.calculateTotalDailyCalories(req.body)),
+      fat: Util.calculateFat(Util.calculateTotalDailyCalories(req.body))
     });
-    user.save(function(err){
+
+    user.save(function(err, newUser){
         if (err) {
             res.status(400).json({message:err.message, status:400});
 
         } else {
-            res.status(200).json({message: "Sucesso.", status: 200});
+            res.status(200).json({message: "Sucesso.", status: 200, data:newUser});
         }
     })
 }

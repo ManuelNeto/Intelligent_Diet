@@ -8,8 +8,17 @@ export class UserService {
 
   private API;
 
+  private user;
   constructor(private http: HttpClient) {
     this.API = `${environment.apiUrl}/user`;
+  }
+
+  setUser(user) {
+    this.user = user;
+  }
+
+  getUser() {
+    return this.user;
   }
 
   getUserById(id) {
@@ -27,7 +36,7 @@ export class UserService {
     return this.http.post(url, user);
   }
 
-  updateAlimento(user: User) {
+  updateUser(user: User) {
     const url = this.API;
     return this.http.put(url, user);
   }

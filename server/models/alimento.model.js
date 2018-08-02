@@ -10,13 +10,23 @@ var Alimento = new Schema({
         type: String,
         required: true
     },
-    quantidade:{
+    calorias: {
         type: Number,
-        required:true
+        required: true
     },
-    calorias:{
+    proteina: {
         type: Number,
-        required:true
+        required: true
+    },
+
+    carboidrato: {
+        type: Number,
+        required: true
+
+    },
+    gordura: {
+        type: Number,
+        required: true
     }
 });
 

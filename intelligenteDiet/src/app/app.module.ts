@@ -9,12 +9,16 @@ import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-router.module';
 import {HeaderComponent} from './header/header.component';
+import {UserService} from './services/user.service';
+import {HttpClientModule} from '@angular/common/http';
+
 import {
   MatButtonModule,
   MatIconModule,
   MatToolbarModule,
   MatSidenavModule,
-  MatListModule} from '@angular/material';
+  MatListModule,
+} from '@angular/material';
 
 
 @NgModule({
@@ -27,7 +31,10 @@ import {
     MatButtonModule,
     MatIconModule,
     MatToolbarModule,
-    MatListModule
+    MatListModule,
+    MatButtonModule,
+    HttpClientModule
+
   ],
   declarations: [
     AppComponent,
@@ -36,6 +43,7 @@ import {
     DietComponent,
     HeaderComponent
   ],
-  bootstrap: [ AppComponent ]
+  bootstrap: [ AppComponent ],
+  providers: [UserService]
 })
 export class AppModule { }

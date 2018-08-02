@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IMultiSelectOption } from 'angular-2-dropdown-multiselect';
+import {UserService} from '../services/user.service';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -18,12 +20,17 @@ export class PreferencesComponent implements OnInit {
   fiberOptions: number[];
   myFiberOptions: IMultiSelectOption[];
 
+  vegetableOptions: number[];
+  myVegetableOptions: IMultiSelectOption[];
+
   fruitOptions: number[];
   myFruitOptions: IMultiSelectOption[];
 
-  constructor() { }
+  constructor(private userService: UserService,
+              private router: Router) { }
 
   ngOnInit() {
+      console.log(this.userService.getUser());
         this.myProteinOptions = [
             { id: 1, name: 'Queijo coalho'},
             { id: 2, name: 'Queijo minas'},
@@ -74,8 +81,12 @@ export class PreferencesComponent implements OnInit {
         ];
   }
 
-  onChange() {
-        console.log(this.proteinOptions);
+  generateDiet() {
+    this.router.navigate(['/diet']);
+  }
+
+  onChange(event) {
+    console.log(event);
   }
 
 }
