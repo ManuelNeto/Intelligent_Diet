@@ -48,8 +48,8 @@ function onGoal(user,  totalCal){
 
 
 module.exports = {
-	calculateTotalDailyCalories: _calculateTotalDailyCalories;
-    calculateCarbo = _calculateCarbo;
-    calculateProtein = _calculateProtein;
-    calculateFat = _calculateFat;
+	calculateTotalDailyCalories: _calculateTotalDailyCalories,
+    calculateCarbo: _calculateCarbo,
+    calculateProtein: _calculateProtein,
+    calculateFat: _calculateFat
 };
