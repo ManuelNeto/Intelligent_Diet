@@ -11,10 +11,11 @@ app.listen(3000, function () {
 });
 app.use('/', index);
 
-mongoose.connect(`mongodb://localhost:27017`)
+mongoose.connect(`mongodb://localhost:27017/intelligentDiet`)
     .then(() => {
         console.log(`Succesfully Connected to the Mongodb Database  at URL: intelligentDiet`)
     })
-    .catch(() => {
+    .catch((error) => {
+        console.log(error);
         console.log(`Error Connecting to the Mongodb Database at URL: intelligentDiet`)
     });
