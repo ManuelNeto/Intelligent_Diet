@@ -5,15 +5,22 @@ import random
 from deap import creator, base, tools, algorithms
 import matplotlib.pyplot as plt
 
-#protein_reference = random.randint(0, 500)
-#fat_reference = random.randint(0, 500)
-#carb_reference = random.randint(0, 500)
+# input_json = sys.argv[1]
+# data_json = json.loads(input_json)
+
+data = []
+with open("data_file.json", "r") as read_file:
+    data = json.load(read_file)
+
+protein_reference = random.randint(0, 500)
+fat_reference = random.randint(0, 500)
+carb_reference = random.randint(0, 500)
 
 protein = "protein"
 fat = "fat"
 carb = "carb"
 NGENES = len(data)
-NGENERATIONS=100
+NGENERATIONS=50
 NPOPULATION=200
 
 creator.create("FitnessMax", base.Fitness, weights=(1.0,))
@@ -26,7 +33,9 @@ toolbox.register("individual", tools.initRepeat, creator.Individual, toolbox.att
 toolbox.register("population", tools.initRepeat, list, toolbox.individual)
         
 def fitness(individual):
-    protein_sum, carb_sum, fat_sum = 0, 0, 0
+    protein_sum = 0
+    carb_sum = 0
+    fat_sum = 0
     
     for i in range(NGENES):
         protein_sum = protein_sum + individual[i] * data[i][protein]
@@ -39,19 +48,24 @@ def fitness(individual):
     diffCarb = (1.*min(carb_reference, carb_sum) / max(carb_reference , carb_sum))
     diffFat = (1.*min(fat_reference, fat_sum) / max(fat_reference, fat_sum))
     
-    v = min (diffProtein, diffCarb, diffFat)  
+    value = (diffProtein + diffCarb + diffFat) * min (diffProtein, diffCarb, diffFat)
+    
+    
+    v = min (diffProtein, diffCarb, diffFat)
+    
     return v,
     
 toolbox.register("evaluate", fitness)
 toolbox.register("mate", tools.cxTwoPoint)
-#toolbox.register("mutate", tools.mutFlipBit, indpb=0.01)
 toolbox.register("mutate", tools.mutFlipBit, indpb=0.01)
 #toolbox.register("select", tools.selTournament, tournsize=3)
-toolbox.register("select", tools.selRoulette, tournsize=3)
+toolbox.register("select", tools.selTournament, tournsize=3)
 
 population = toolbox.population(n=NPOPULATION)
 
-pro, car, gor = [], [], []
+pro = []
+car = []
+gor = []
 lista = []
 i = 1
 
@@ -66,7 +80,6 @@ for gen in range(NGENERATIONS):
     lista.append(i)
     i = i + 1
     
-    #offspring = algorithms.varAnd(population, toolbox, cxpb=0.5, mutpb=0.1)
     offspring = algorithms.varAnd(population, toolbox, cxpb=0.5, mutpb=0.1)
     fits = toolbox.map(toolbox.evaluate, offspring)
     for fit, ind in zip(fits, offspring):
@@ -106,18 +119,6 @@ for i in range(NGENES):
     carb_sum = carb_sum + population[best][i] * data[i][carb]
 for i in range(NGENES):
     fat_sum = fat_sum + population[best][i] * data[i][fat]
-print protein_sum, carb_sum, fat_sum
-
-protein_sum = 0
-carb_sum = 0
-fat_sum = 0
-
-for i in range(NGENES):
-    protein_sum = protein_sum + population[NGENES-1][i] * data[i][protein]
-for i in range(NGENES):
-    carb_sum = carb_sum + population[NGENES-1][i] * data[i][carb]
-for i in range(NGENES):
-    fat_sum = fat_sum + population[NGENES-1][i] * data[i][fat]
 print protein_sum, carb_sum, fat_sum
 
 

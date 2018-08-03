@@ -2,7 +2,7 @@ import random
 import json
 
 data = []
-NELEMENTS = 20
+NELEMENTS = 100
 
 for i in range (NELEMENTS):
 	element = {}
