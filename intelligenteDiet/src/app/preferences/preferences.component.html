@@ -1,0 +1,57 @@
+<div class="container" id="preferencesForm" style="margin: 40px">
+  <form name="form">
+    <div>
+      <h4 translate> Preferências </h4>
+    </div>
+    <div class="form-group">
+      <div>
+        <label class="control-label" for="type" translate> Proteínas </label>
+      </div>
+      <div class="row">
+        <ss-multiselect-dropdown class="selectBox" [options]="myProteinOptions" name="proteins" [(ngModel)]="proteinOptionsIds"></ss-multiselect-dropdown>
+        <p class="selectAll" (click)="selectAll('protein')"><mat-icon style="margin-top: 8px">done_all</mat-icon>select all</p>
+      </div>
+    </div>
+    <div class="form-group">
+      <div>
+        <label class="control-label" for="type" translate> Caboidratos </label>
+      </div>
+      <div class="row">
+        <ss-multiselect-dropdown class="selectBox" [options]="myPastaOptions" name="massas" [(ngModel)]="pastaOptionsIds"></ss-multiselect-dropdown>
+        <p class="selectAll" (click)="selectAll('pasta')"><mat-icon style="margin-top: 8px">done_all</mat-icon>select all</p>
+      </div>
+    </div>
+    <div class="form-group">
+      <div>
+        <label class="control-label" for="type" translate> Fibras </label>
+      </div>
+      <div class="row">
+        <ss-multiselect-dropdown class="selectBox" [options]="myFiberOptions" name="fibras" [(ngModel)]="fiberOptionsIds"></ss-multiselect-dropdown>
+        <p class="selectAll" (click)="selectAll('fiber')"><mat-icon style="margin-top: 8px">done_all</mat-icon>select all</p>
+      </div>
+    </div>
+    <div class="form-group">
+      <div>
+        <label class="control-label" for="type" translate> Legumes </label>
+      </div>
+      <div class="row">
+        <ss-multiselect-dropdown class="selectBox" [options]="myVegetableOptions" name="legumes" [(ngModel)]="vegetableOptionsIds"></ss-multiselect-dropdown>
+        <p class="selectAll" (click)="selectAll('vegetable')"><mat-icon style="margin-top: 8px">done_all</mat-icon>select all</p>
+      </div>
+    </div>
+    <div class="form-group">
+      <div>
+        <label class="control-label" for="type" translate> Frutas </label>
+      </div>
+      <div class="row">
+        <ss-multiselect-dropdown class="selectBox" [options]="myFruitOptions" name="frutas" [(ngModel)]="fruitOptionsIds"></ss-multiselect-dropdown>
+        <p class="selectAll" (click)="selectAll('fruit')"><mat-icon style="margin-top: 8px">done_all</mat-icon>select all</p>
+      </div>
+    </div>
+    <div>
+      <button mat-raised-button class="btn btn-secondary" routerLink="/register">Voltar</button>
+      <button mat-raised-button class="btn btn-secondary" (click)="generateDiet()">Gerar dieta</button>
+    </div>
+
+  </form>
+</div>
