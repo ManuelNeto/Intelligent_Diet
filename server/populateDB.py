@@ -7,7 +7,7 @@ with open('alimentosDB.csv', 'rb') as f:
 
 cliente = MongoClient('localhost', 27017)
 banco = cliente['intelligentDiet']
-alimentos = banco['alimento']
+alimentos = banco['alimentos']
 
 for i in range(1, len(data)):
 	att = data[i]

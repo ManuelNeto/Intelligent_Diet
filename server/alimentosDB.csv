@@ -22,28 +22,28 @@ Presunto fatiado,proteina,"16,6","8,6","3,83",163
 Maminha,proteina,"21,87","7,3",0,159
 Sardinha,proteina,"24,62","11,45",0,208
 Filé mignon,proteina,"20,78","8,85",0,168
-Tapioca,caboidrato,0,0,85,347
-Macaxeira,caboidrato,0,0,"33,67",142
-Bolacha de água e sal,caboidrato,14,10,70,420
-Bolacha maisena,caboidrato,"8,25",8,76,"399,3"
-Inhame,caboidrato,0,0,"27,58",116
-Arroz Branco,caboidrato,"2,5",0,"28,18",129
-Arroz Integral,caboidrato,"2,5",0,"22,78",110
-Banana,caboidrato,0,0,"22,84",89
-Macarrão a bolonhesa,caboidrato,7,5,18,146
-Batata doce,caboidrato,0,0,20,86
-Pure de batata,caboidrato,0,0,15,0
-Grão de bico,caboidrato,"8,77","10,7","27,55",236
-Pipoca,caboidrato,9,28,57,500
-Pão francês,caboidrato,"8,8",3,"81,9",274
-Pão integral,caboidrato,"9,1","4,1","47,2",260
-Macarrão,caboidrato,"5,7","0,92","30,68",157
-Batata cozida,caboidrato,"1,87","0,1","20,13",87
-Feijão carioca,caboidrato,"5,04","0,85","13,61",76
-Feijão preto,caboidrato,"6,03","0,29","16,56",91
-Mandioca,caboidrato,"1,37","0,28","38,27",161
-Batata inglesa,caboidrato,"1,9","0,12","13,13",77
-Torrada integral,caboidrato,14,8,57,350
+Tapioca,carboidrato,0,0,85,347
+Macaxeira,carboidrato,0,0,"33,67",142
+Bolacha de água e sal,carboidrato,14,10,70,420
+Bolacha maisena,carboidrato,"8,25",8,76,"399,3"
+Inhame,carboidrato,0,0,"27,58",116
+Arroz Branco,carboidrato,"2,5",0,"28,18",129
+Arroz Integral,carboidrato,"2,5",0,"22,78",110
+Banana,carboidrato,0,0,"22,84",89
+Macarrão a bolonhesa,carboidrato,7,5,18,146
+Batata doce,carboidrato,0,0,20,86
+Pure de batata,carboidrato,0,0,15,0
+Grão de bico,carboidrato,"8,77","10,7","27,55",236
+Pipoca,carboidrato,9,28,57,500
+Pão francês,carboidrato,"8,8",3,"81,9",274
+Pão integral,carboidrato,"9,1","4,1","47,2",260
+Macarrão,carboidrato,"5,7","0,92","30,68",157
+Batata cozida,carboidrato,"1,87","0,1","20,13",87
+Feijão carioca,carboidrato,"5,04","0,85","13,61",76
+Feijão preto,carboidrato,"6,03","0,29","16,56",91
+Mandioca,carboidrato,"1,37","0,28","38,27",161
+Batata inglesa,carboidrato,"1,9","0,12","13,13",77
+Torrada integral,carboidrato,14,8,57,350
 Aveia ,fibra,17,7,66,389
 Soja,fibra,36,20,30,446
 Lentilha,fibra,9,20,20,116
