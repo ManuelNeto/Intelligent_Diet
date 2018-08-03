@@ -66,7 +66,7 @@ export class DietComponent implements OnInit {
   }
 
   ngOnInit() {
-    
+
   }
 
 
