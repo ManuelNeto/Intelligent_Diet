@@ -12,7 +12,7 @@ cliente = MongoClient('localhost', 27017)
 banco = cliente['intelligentDiet']
 alimentos = banco['alimentos']
 
-data = alimentos.find()
+data = list(alimentos.find())
 
 protein_reference = random.randint(0, 500)
 fat_reference = random.randint(0, 500)
@@ -21,7 +21,7 @@ carb_reference = random.randint(0, 500)
 protein = "proteina"
 fat = "gordura"
 carb = "carboidrato"
-NGENES = data.count()
+NGENES = len(data)
 NGENERATIONS=50
 NPOPULATION=200
 
@@ -92,52 +92,11 @@ for gen in range(NGENERATIONS):
         ind.fitness.values = fit
     population = toolbox.select(offspring, k=len(population))
 
-a = fitness(population[0])
-pro.append(a)
-#car.append(b)
-#gor.append(c)
-lista.append(i)
-i = i + 1
-    
-print
-print
-print
-
-best = 0
-fitbest = 0
-
-for i in range(NPOPULATION):
-    if fitbest < fitness(population[i]):
-        fitbest = fitness(population[i])
-        best = i
-
-print fitness(population[best])
-print population[best]
-#print population
-print protein_reference, carb_reference, fat_reference
-protein_sum = 0
-carb_sum = 0
-fat_sum = 0
-
-for i in range(NGENES):
-    protein_sum = protein_sum + population[best][i] * data[i][protein]
-for i in range(NGENES):
-    carb_sum = carb_sum + population[best][i] * data[i][carb]
-for i in range(NGENES):
-    fat_sum = fat_sum + population[best][i] * data[i][fat]
-print protein_sum, carb_sum, fat_sum
-
-protein_sum = 0
-carb_sum = 0
-fat_sum = 0
-
-for i in range(NGENES):
-    protein_sum = protein_sum + population[NGENES-1][i] * data[i][protein]
-for i in range(NGENES):
-    carb_sum = carb_sum + population[NGENES-1][i] * data[i][carb]
-for i in range(NGENES):
-    fat_sum = fat_sum + population[NGENES-1][i] * data[i][fat]
-print protein_sum, carb_sum, fat_sum
+response = []
+for i in xrange(len(population[0])):
+	if (population[0][i] == 1):
+		response.append(data[i]);
+print response
 
 
 
