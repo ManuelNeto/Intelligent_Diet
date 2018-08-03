@@ -96,10 +96,8 @@ export class PreferencesComponent implements OnInit {
 
   generateDiet() {
     let diets;
-    let info = this.userService.getUser();
-    info.prefereces = this.getSelectedFood();
 
-    this.httpClient.post('http://127.0.0.1:5002/generateDiet', info).subscribe(data => {
+    this.httpClient.post('http://127.0.0.1:5002/generateDiet', this.getSelectedFood()).subscribe(data => {
       diets = JSON.parse(data.toString());
       this.dietService.setDiets(diets);
       this.router.navigate(['/diet']);
