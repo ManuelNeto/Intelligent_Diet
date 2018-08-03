@@ -4,6 +4,10 @@ import {UserService} from '../services/user.service';
 import {Data, Router} from '@angular/router';
 import {AlimentoService} from '../services/alimento.service';
 import {Alimento} from '../models/Alimento';
+import {DietService} from '../services/diet.service';
+import {Diet} from '../models/Diet';
+import {HttpClient} from '@angular/common/http';
+import {containsElement} from '@angular/animations/browser/src/render/shared';
 
 
 @Component({
@@ -30,7 +34,9 @@ export class PreferencesComponent implements OnInit {
 
   constructor(private userService: UserService,
               private alimentoService: AlimentoService,
-              private router: Router) { }
+              private dietService: DietService,
+              private router: Router,
+              private httpClient: HttpClient) { }
 
   ngOnInit() {
     this.fetchAlimentos();
@@ -76,13 +82,29 @@ export class PreferencesComponent implements OnInit {
     return options;
   }
 
+  getSelectedFood() {
+    let allFood = this.myPastaOptions.concat(this.myProteinOptions, this.myFiberOptions, this.myFruitOptions, this.myVegetableOptions);
+    let selectedFoodIds = this.pastaOptionsIds.concat(this.proteinOptionsIds, this.fiberOptionsIds, this.fruitOptionsIds, this.vegetableOptionsIds);
+    let selectedFood = [];
+    allFood.forEach((food) => {
+      if(selectedFoodIds.some(id => id === food.id)) {
+        selectedFood.push(food);
+      }
+    })
+    return selectedFood;
+  }
+
   generateDiet() {
-    this.router.navigate(['/diet']);
-  }
+    let diets;
+    let info = this.userService.getUser();
+    info.prefereces = this.getSelectedFood();
 
-  onChange(event) {
-    console.log(event);
-    console.log(this.myPastaOptions);
-  }
+    this.httpClient.post('http://127.0.0.1:5002/generateDiet', info).subscribe(data => {
+      diets = JSON.parse(data);
+      this.dietService.setDiets();
+      this.router.navigate(['/diet']);
 
+    });
+
+  }
 }

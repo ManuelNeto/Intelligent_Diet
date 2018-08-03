@@ -10,6 +10,11 @@ var Alimento = new Schema({
         type: String,
         required: true
     },
+    selecionado: {
+        type: Boolean,
+        default: false,
+        required: false
+    },
     calorias: {
         type: Number,
         required: true
@@ -18,11 +23,9 @@ var Alimento = new Schema({
         type: Number,
         required: true
     },
-
     carboidrato: {
         type: Number,
         required: true
-
     },
     gordura: {
         type: Number,

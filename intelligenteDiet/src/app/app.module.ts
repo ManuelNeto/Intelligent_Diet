@@ -20,6 +20,7 @@ import {
   MatListModule,
 } from '@angular/material';
 import {AlimentoService} from './services/alimento.service';
+import {DietService} from './services/diet.service';
 
 
 @NgModule({
@@ -44,6 +45,6 @@ import {AlimentoService} from './services/alimento.service';
     HeaderComponent
   ],
   bootstrap: [ AppComponent ],
-  providers: [UserService, AlimentoService]
+  providers: [UserService, AlimentoService, DietService]
 })
 export class AppModule { }

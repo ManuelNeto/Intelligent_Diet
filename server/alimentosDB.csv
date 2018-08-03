@@ -1,102 +1,101 @@
-Nome,Tipo,Proteina (g),Gordura (g),Carboidrato (g),Calorias (kcal)
-Carne de sol,proteina,"25,7","7,86",0,180
-Peito de frango,proteina,"29,55","7,72",0,195
-Salmão,proteina,"21,62","5,93",0,146
-Ovo,proteina,"12,58","9,94","0,77",147
-Carne de porco,proteina,"27,34","17,04",0,271
-Tilápia,proteina,"20,08","1,7",0,96
-Charque,proteina,"23,13","3,62",0,131
-Ovo de codorna,proteina,"13,05","11,09","0,41",158
-Coxa de frango,proteina,"26,8","11,06",0,214
-Atum,proteina,"23,38","0,95",0,108
-Linguiça de frango,proteina,"14,1","17,2","5,52",237
-Peito de peru fatiado,proteina,22,2,2,120
-Salame,proteina,"13,92","20,11","2,25",250
-Queijo coalho,proteina,"23,63","28,26","1,49",355
-Carne de vaca,proteina,"25,91","17,32",0,267
-Carne de vaca moída,proteina,"25,35","18,58",0,276
-Calabresa,proteina,"15,64","28,28","1,42",328
-Queijo suíço,proteina,"27,8","27,8","5,38","26,93"
-Queijo cheddar,proteina,"24,9","33,14","1,28",403
-Presunto fatiado,proteina,"16,6","8,6","3,83",163
-Maminha,proteina,"21,87","7,3",0,159
-Sardinha,proteina,"24,62","11,45",0,208
-Filé mignon,proteina,"20,78","8,85",0,168
-Tapioca,carboidrato,0,0,85,347
-Macaxeira,carboidrato,0,0,"33,67",142
-Bolacha de água e sal,carboidrato,14,10,70,420
-Bolacha maisena,carboidrato,"8,25",8,76,"399,3"
-Inhame,carboidrato,0,0,"27,58",116
-Arroz Branco,carboidrato,"2,5",0,"28,18",129
-Arroz Integral,carboidrato,"2,5",0,"22,78",110
-Banana,carboidrato,0,0,"22,84",89
-Macarrão a bolonhesa,carboidrato,7,5,18,146
-Batata doce,carboidrato,0,0,20,86
-Pure de batata,carboidrato,0,0,15,0
-Grão de bico,carboidrato,"8,77","10,7","27,55",236
-Pipoca,carboidrato,9,28,57,500
-Pão francês,carboidrato,"8,8",3,"81,9",274
-Pão integral,carboidrato,"9,1","4,1","47,2",260
-Macarrão,carboidrato,"5,7","0,92","30,68",157
-Batata cozida,carboidrato,"1,87","0,1","20,13",87
-Feijão carioca,carboidrato,"5,04","0,85","13,61",76
-Feijão preto,carboidrato,"6,03","0,29","16,56",91
-Mandioca,carboidrato,"1,37","0,28","38,27",161
-Batata inglesa,carboidrato,"1,9","0,12","13,13",77
-Torrada integral,carboidrato,14,8,57,350
-Aveia ,fibra,17,7,66,389
-Soja,fibra,36,20,30,446
-Lentilha,fibra,9,20,20,116
-Amendoim,fibra,26,49,16,567
-Nozes,fibra,"15,9","66,6","13,2",666
-Uva passa,fibra,3,"0,46","79,1",299
-Grão de bico,fibra,8,0,"27,5",165
-Semente de linhaça,fibra,30,60,25,450
-Cereais integrais,fibra,"8,9","3,6",58,290
-Pão Integral 7 Grãos,fibra,"12,6","3,4",40,224
-Farelo de trigo,fibra,16,0,22,150
-Cevada,fibra,4,0,92,400
-Granola,fibra,"7,8",5,45,250
-Linhaça,fibra,30,60,25,450
-Brócolis,legume,"2,8","0,4",7,34
-Abóbora,legume,1,"0,1",7,26
-Beterraba,legume,"1,6","0,2",10,43
-Alface,legume,"1,4","0,2","2,9",15
-Cenoura,legume,"0,93","0,24","9,58",41
-Ervilha,legume,"4,5","0,6","6,1",58
-Vagem,legume,"3,18","2,4","6,9",61
-Abóbora,legume,"1,37","0,09","12,2",40
-Couve ,legume,"2,26",0.39,"4,89",27
-Tomate,legume,"0,88","0,2","3,92",18
-Cebola,legume,"0,92","0,08","10,11",42
-Azeitona,legume,"0,92","11,27","5,4",117
-Espinafre,legume,"2,86","0,39","3,63",23
-Beringela,legume,"0,79","3,85","8,31",65
-Pimentão,legume,"0,86","0,17","4,64",20
-Cogumelos,legume,"3,09","0,34","3,28",22
-Pepino,legume,"0,65","0,11","3,63",15
-Couve-flor,legume,"1,98","0,1","5,3",25
-Acelga,legume,"1,8","0,2","3,74",19
-Nabo,legume,"7,6",36,48,537
-Mamão,fruta,"1,36","0,17","19,7","76,5"
-Morango,fruta,"0,7","0,3",8,33
-Maça,fruta,"0,3","0,2",14,52
-Cereja,fruta,1,"0,3",12,50
-Banana,fruta,"1,1","0,3",23,89
-Tangerina,fruta,"0,57","0,22","9,34",37
-Abacate,fruta,2,"14,66","8,5",160
-Pêssego,fruta,"0,43","0,06","5,99",24
-Goiaba ,fruta,"1,13","6,5","6,39",88
-Framboesa,fruta,"1,2","0,65",11,52
-Uva,fruta,"1,2",0,26,54
-Ameixa,fruta,0,0,"11,42",0
-Kiwi,fruta,"1,2",0,"14,66",61
-Pera,fruta,0,0,"15,46",58
-Coco,fruta,"3,33","33,49","15,23",354
-Abacaxi,fruta,0,0,"12,63",48
-Melancia,fruta,0,0,"7,55",30
-Melão,fruta,0,0,"8,16",34
-Jaca,fruta,"1,47",0,24,94
-Caju,fruta,0,0,"11,41",43
-Manga,fruta,0,0,17,65
-Laranja,fruta,0,0,"11,75",47
+Nome,Tipo,Proteina (g),Gordura (g),Carboidrato (g),Calorias (kcal),cafe
+Carne de sol,proteina,"25,7","7,86",0,180,
+Peito de frango,proteina,"29,55","7,72",0,195,
+Salmão,proteina,"21,62","5,93",0,146,
+Ovo,proteina,"12,58","9,94","0,77",147,
+Carne de porco,proteina,"27,34","17,04",0,271,
+Tilápia,proteina,"20,08","1,7",0,96,
+Charque,proteina,"23,13","3,62",0,131,
+Ovo de codorna,proteina,"13,05","11,09","0,41",158,
+Coxa de frango,proteina,"26,8","11,06",0,214,
+Atum,proteina,"23,38","0,95",0,108,
+Linguiça de frango,proteina,"14,1","17,2","5,52",237,
+Peito de peru fatiado,proteina,22,2,2,120,
+Salame,proteina,"13,92","20,11","2,25",250,
+Queijo coalho,proteina,"23,63","28,26","1,49",355,
+Carne de vaca,proteina,"25,91","17,32",0,267,
+Carne de vaca moída,proteina,"25,35","18,58",0,276,
+Calabresa,proteina,"15,64","28,28","1,42",328,
+Queijo suíço,proteina,"27,8","27,8","5,38","26,93",
+Queijo cheddar,proteina,"24,9","33,14","1,28",403,
+Presunto fatiado,proteina,"16,6","8,6","3,83",163,
+Maminha,proteina,"21,87","7,3",0,159,
+Sardinha,proteina,"24,62","11,45",0,208,
+Filé mignon,proteina,"20,78","8,85",0,168,
+Tapioca,carboidrato,0,0,85,347,
+Macaxeira,carboidrato,0,0,"33,67",142,
+Bolacha de água e sal,carboidrato,14,10,70,420,
+Bolacha maisena,carboidrato,"8,25",8,76,"399,3",
+Inhame,carboidrato,0,0,"27,58",116,
+Arroz Branco,carboidrato,"2,5",0,"28,18",129,
+Arroz Integral,carboidrato,"2,5",0,"22,78",110,
+Banana,carboidrato,0,0,"22,84",89,
+Macarrão a bolonhesa,carboidrato,7,5,18,146,
+Batata doce,carboidrato,0,0,20,86,
+Pure de batata,carboidrato,0,0,15,0,
+Grão de bico,carboidrato,"8,77","10,7","27,55",236,
+Pipoca,carboidrato,9,28,57,500,
+Pão francês,carboidrato,"8,8",3,"81,9",274,
+Pão integral,carboidrato,"9,1","4,1","47,2",260,
+Macarrão,carboidrato,"5,7","0,92","30,68",157,
+Batata cozida,carboidrato,"1,87","0,1","20,13",87,
+Feijão carioca,carboidrato,"5,04","0,85","13,61",76,
+Feijão preto,carboidrato,"6,03","0,29","16,56",91,
+Mandioca,carboidrato,"1,37","0,28","38,27",161,
+Batata inglesa,carboidrato,"1,9","0,12","13,13",77,
+Torrada integral,carboidrato,14,8,57,350,
+Aveia ,fibra,17,7,66,389,
+Soja,fibra,36,20,30,446,
+Lentilha,fibra,9,20,20,116,
+Amendoim,fibra,26,49,16,567,
+Nozes,fibra,"15,9","66,6","13,2",666,
+Uva passa,fibra,3,"0,46","79,1",299,
+Grão de bico,fibra,8,0,"27,5",165,
+Semente de linhaça,fibra,30,60,25,450,
+Cereais integrais,fibra,"8,9","3,6",58,290,
+Pão Integral 7 Grãos,fibra,"12,6","3,4",40,224,
+Farelo de trigo,fibra,16,0,22,150,
+Cevada,fibra,4,0,92,400,
+Granola,fibra,"7,8",5,45,250,
+Linhaça,fibra,30,60,25,450,
+Brócolis,legume,"2,8","0,4",7,34,
+Abóbora,legume,1,"0,1",7,26,
+Beterraba,legume,"1,6","0,2",10,43,
+Alface,legume,"1,4","0,2","2,9",15,
+Cenoura,legume,"0,93","0,24","9,58",41,
+Ervilha,legume,"4,5","0,6","6,1",58,
+Vagem,legume,"3,18","2,4","6,9",61,
+Abóbora,legume,"1,37","0,09","12,2",40,
+Couve ,legume,"2,26",0.39,"4,89",27,
+Tomate,legume,"0,88","0,2","3,92",18,
+Cebola,legume,"0,92","0,08","10,11",42,
+Azeitona,legume,"0,92","11,27","5,4",117,
+Espinafre,legume,"2,86","0,39","3,63",23,
+Beringela,legume,"0,79","3,85","8,31",65,
+Pimentão,legume,"0,86","0,17","4,64",20,
+Cogumelos,legume,"3,09","0,34","3,28",22,
+Pepino,legume,"0,65","0,11","3,63",15,
+Couve-flor,legume,"1,98","0,1","5,3",25,
+Acelga,legume,"1,8","0,2","3,74",19,
+Nabo,legume,"7,6",36,48,537,
+Mamão,fruta,"1,36","0,17","19,7","76,5",
+Morango,fruta,"0,7","0,3",8,33,
+Maça,fruta,"0,3","0,2",14,52,
+Cereja,fruta,1,"0,3",12,50,
+Banana,fruta,"1,1","0,3",23,89,
+Tangerina,fruta,"0,57","0,22","9,34",37,
+Abacate,fruta,2,"14,66","8,5",160,
+Pêssego,fruta,"0,43","0,06","5,99",24,
+Goiaba ,fruta,"1,13","6,5","6,39",88,
+Framboesa,fruta,"1,2","0,65",11,52,
+Uva,fruta,"1,2",0,26,54,
+Ameixa,fruta,0,0,"11,42",0,
+Kiwi,fruta,"1,2",0,"14,66",61,
+Pera,fruta,0,0,"15,46",58,
+Coco,fruta,"3,33","33,49","15,23",354,
+Abacaxi,fruta,0,0,"12,63",48,
+Melancia,fruta,0,0,"7,55",30,
+Melão,fruta,0,0,"8,16",34,
+Jaca,fruta,"1,47",0,24,94,
+Caju,fruta,0,0,"11,41",43,
+Laranja,fruta,0,0,"11,75",47,
