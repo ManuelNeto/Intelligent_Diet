@@ -19,10 +19,11 @@ cliente = MongoClient('localhost', 27017)
 banco = cliente['intelligentDiet']
 alimentos = banco['alimentos']
 
-def getDiets(data):
-	protein_reference = random.randint(0, 500)
-	fat_reference = random.randint(0, 500)
-	carb_reference = random.randint(0, 500)
+def getDiets(info):
+	data = info['preferences']
+	protein_reference = info['protein']
+	fat_reference = info['fat']
+	carb_reference = info['carbo']
 
 	protein = "proteina"
 	fat = "gordura"
@@ -30,9 +31,6 @@ def getDiets(data):
 	NGENES = len(data)
 	NGENERATIONS=50
 	NPOPULATION=200
-
-	def toFloat(num):
-		return float(num)
 
 	creator.create("FitnessMax", base.Fitness, weights=(1.0,))
 	creator.create("Individual", list, fitness=creator.FitnessMax)
@@ -48,12 +46,11 @@ def getDiets(data):
 	    carb_sum = 0
 	    fat_sum = 0
 	    for i in range(NGENES):
-		print data[i]
-		protein_sum = protein_sum + individual[i] * toFloat(data[i][protein])
+		protein_sum = protein_sum + individual[i] * data[i][protein]
 	    for i in range(NGENES):
-		carb_sum = carb_sum + individual[i] * toFloat(data[i][carb])
+		carb_sum = carb_sum + individual[i] * data[i][carb]
 	    for i in range(NGENES):
-		fat_sum = fat_sum + individual[i] * toFloat(data[i][fat])
+		fat_sum = fat_sum + individual[i] * data[i][fat]
 	    
 	    diffProtein = (1.*min(protein_reference,protein_sum) / max(protein_reference, protein_sum))
 	    diffCarb = (1.*min(carb_reference, carb_sum) / max(carb_reference , carb_sum))
@@ -104,8 +101,7 @@ def getDiets(data):
 
 @app.route("/generateDiet", methods=['POST'])
 def generateDiets():
-  print json.loads(request.data)['preferences']
-  diets = getDiets(json.loads(request.data)['preferences'])
+  diets = getDiets(json.loads(request.data))
   return jsonify(diets)
 
 if __name__ == '__main__':

@@ -40,6 +40,7 @@ export class PreferencesComponent implements OnInit {
 
   ngOnInit() {
     this.fetchAlimentos();
+    console.log(this.userService.getUser());
   }
 
   fetchAlimentos() {
@@ -96,11 +97,15 @@ export class PreferencesComponent implements OnInit {
 
   generateDiet() {
     let diets;
-
-    this.httpClient.post('http://127.0.0.1:5002/generateDiet', this.getSelectedFood()).subscribe(data => {
-      diets = JSON.parse(data.toString());
+    let protein = this.userService.getUser().protein;
+    let fat = this.userService.getUser().fat;
+    let carbo = this.userService.getUser().carbo;
+    let info = { preferences: this.getSelectedFood(), protein: protein, fat: fat, carbo: carbo}
+    this.httpClient.post('http://127.0.0.1:5002/generateDiet', info).subscribe(data => {
+      diets = data;
+      console.log(diets);
       this.dietService.setDiets(diets);
-      this.router.navigate(['/diet']);
+      // this.router.navigate(['/diet']);
     });
 
   }
