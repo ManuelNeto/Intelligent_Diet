@@ -13,19 +13,19 @@ import {Alimento} from '../models/Alimento';
 })
 export class PreferencesComponent implements OnInit {
 
-  proteinOptions: number[];
+  proteinOptionsIds: string[];
   myProteinOptions: IMultiSelectOption[];
 
-  pastaOptions: number[];
+  pastaOptionsIds: string[];
   myPastaOptions: IMultiSelectOption[];
 
-  fiberOptions: number[];
+  fiberOptionsIds: string[];
   myFiberOptions: IMultiSelectOption[];
 
-  vegetableOptions: number[];
+  vegetableOptionsIds: string[];
   myVegetableOptions: IMultiSelectOption[];
 
-  fruitOptions: number[];
+  fruitOptionsIds: string[];
   myFruitOptions: IMultiSelectOption[];
 
   constructor(private userService: UserService,
@@ -33,37 +33,47 @@ export class PreferencesComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit() {
-      console.log(this.userService.getUser());
-      this.fetchAlimentos();
+    this.fetchAlimentos();
   }
 
   fetchAlimentos() {
     this.alimentoService.getAlimentosByType('proteina').subscribe(
       (data: Data) => {
-        this.proteinOptions = data.data;
+        this.myProteinOptions = data.data;
+        this.myProteinOptions = this.mapIds(this.myProteinOptions);
       }
     );
     this.alimentoService.getAlimentosByType('carboidrato').subscribe(
       (data: Data) => {
-        this.pastaOptions = data.data;
-        console.log(data);
+        this.myPastaOptions = data.data;
+        this.myPastaOptions = this.mapIds(this.myPastaOptions);
       }
     );
     this.alimentoService.getAlimentosByType('fruta').subscribe(
       (data: Data) => {
-        this.fruitOptions = data.data;
+        this.myFruitOptions = data.data;
+        this.myFruitOptions = this.mapIds(this.myFruitOptions);
       }
     );
     this.alimentoService.getAlimentosByType('fibra').subscribe(
       (data: Data) => {
-        this.fiberOptions = data.data;
+        this.myFiberOptions = data.data;
+        this.myFiberOptions = this.mapIds(this.myFiberOptions);
       }
     );
     this.alimentoService.getAlimentosByType('legume').subscribe(
       (data: Data) => {
-        this.vegetableOptions = data.data;
+        this.myVegetableOptions = data.data;
+        this.myVegetableOptions = this.mapIds(this.myVegetableOptions);
       }
     );
+  }
+
+  mapIds(options) {
+    for(let i = 0; i<options.length; i++) {
+      options[i].id = options[i]._id;
+    }
+    return options;
   }
 
   generateDiet() {
@@ -72,6 +82,7 @@ export class PreferencesComponent implements OnInit {
 
   onChange(event) {
     console.log(event);
+    console.log(this.myPastaOptions);
   }
 
 }
