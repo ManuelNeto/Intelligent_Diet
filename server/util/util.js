@@ -5,7 +5,7 @@ const INTENSO = 1.725;
 
 
 function _calculateProtein(peso){
-    return peso * 1.83;
+    return peso * 1.9;
 
 }
 function _calculateFat(cal){

@@ -24,12 +24,6 @@ var Diet = new Schema({
     required: true
   }],
 
-  dessert: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Alimento',
-    required: true
-  }],
-
   snack: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Alimento',

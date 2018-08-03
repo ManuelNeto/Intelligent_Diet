@@ -1,7 +1,32 @@
 <div class="container" style="margin: 40px">
   <div>
+    <h2>Detalhes</h2>
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th> Proteina total </th>
+        <th> Proteina esperada </th>
+        <th> Carboidrato total</th>
+        <th> Carboidrato esperado </th>
+        <th> Gordura total</th>
+        <th> Gordura esperada </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>{{proteinaTotal}}</td>
+        <td>{{proteinaEsperada}}</td>
+        <td>{{carboidratoTotal}}</td>
+        <td>{{carboidratoEsperado}}</td>
+        <td>{{gorduraTotal}}</td>
+        <td>{{gorduraEsperada}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
     <h2>Café da manhã</h2>
-    <h6>Horário: 06: 30</h6>
+    <h6>Horário: 06:30</h6>
     <p>Escolher uma opção para cada tipo de alimento.</p>
     <table class="table table-hover">
       <thead>
@@ -9,6 +34,9 @@
           <th> Tipo </th>
           <th> Alimento </th>
           <th> Quantidade </th>
+          <th> Proteina </th>
+          <th> Carboidrato </th>
+          <th> Gordura </th>
           <th> Calorias </th>
         </tr>
       </thead>
@@ -16,7 +44,10 @@
         <tr *ngFor="let alimento of cafeDaManha">
           <td>{{alimento.tipo}}</td>
           <td>{{alimento.name}}</td>
-          <td>{{alimento.quantidade}}</td>
+          <td>100g</td>
+          <td>{{alimento.proteina}}</td>
+          <td>{{alimento.carboidrato}}</td>
+          <td>{{alimento.gordura}}</td>
           <td>{{alimento.calorias}}</td>
         </tr>
       </tbody>
@@ -24,7 +55,7 @@
   </div>
   <div>
     <h2> Almoço </h2>
-    <h6>Horário: 12: 30</h6>
+    <h6>Horário: 12:30</h6>
     <p>Escolher uma opção para cada tipo de alimento.</p>
     <table class="table table-hover">
       <thead>
@@ -32,6 +63,9 @@
           <th> Tipo </th>
           <th> Alimento </th>
           <th> Quantidade </th>
+          <th> Proteina </th>
+          <th> Carboidrato </th>
+          <th> Gordura </th>
           <th> Calorias </th>
         </tr>
       </thead>
@@ -39,30 +73,10 @@
         <tr *ngFor="let alimento of almoco">
           <td>{{alimento.tipo}}</td>
           <td>{{alimento.name}}</td>
-          <td>{{alimento.quantidade}}</td>
-          <td>{{alimento.calorias}}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <div>
-    <h2> Sobremesa </h2>
-    <h6>Horário: 12: 50</h6>
-    <p>Escolher uma opção para cada tipo de alimento.</p>
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th> Tipo </th>
-          <th> Alimento </th>
-          <th> Quantidade </th>
-          <th> Calorias </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let alimento of sobremesa">
-          <td>{{alimento.tipo}}</td>
-          <td>{{alimento.name}}</td>
-          <td>{{alimento.quantidade}}</td>
+          <td>100g</td>
+          <td>{{alimento.proteina}}</td>
+          <td>{{alimento.carboidrato}}</td>
+          <td>{{alimento.gordura}}</td>
           <td>{{alimento.calorias}}</td>
         </tr>
       </tbody>
@@ -70,7 +84,7 @@
   </div>
   <div>
     <h2> Lanche </h2>
-    <h6>Horário: 16: 00</h6>
+    <h6>Horário: 16:00</h6>
     <p>Escolher uma opção para cada tipo de alimento.</p>
     <table class="table table-hover">
       <thead>
@@ -78,14 +92,20 @@
           <th> Tipo </th>
           <th> Alimento </th>
           <th> Quantidade </th>
+          <th> Proteina </th>
+          <th> Carboidrato </th>
+          <th> Gordura </th>
           <th> Calorias </th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let alimento of sobremesa">
+        <tr *ngFor="let alimento of lanche">
           <td>{{alimento.tipo}}</td>
           <td>{{alimento.name}}</td>
-          <td>{{alimento.quantidade}}</td>
+          <td>100g</td>
+          <td>{{alimento.proteina}}</td>
+          <td>{{alimento.carboidrato}}</td>
+          <td>{{alimento.gordura}}</td>
           <td>{{alimento.calorias}}</td>
         </tr>
       </tbody>
@@ -93,7 +113,7 @@
   </div>
   <div>
     <h2> Jantar </h2>
-    <h6>Horário: 19: 30</h6>
+    <h6>Horário: 19:30</h6>
     <p>Escolher uma opção para cada tipo de alimento.</p>
     <table class="table table-hover">
       <thead>
@@ -101,6 +121,9 @@
           <th> Tipo </th>
           <th> Alimento </th>
           <th> Quantidade </th>
+          <th> Proteina </th>
+          <th> Carboidrato </th>
+          <th> Gordura </th>
           <th> Calorias </th>
         </tr>
       </thead>
@@ -108,7 +131,10 @@
         <tr *ngFor="let alimento of jantar">
           <td>{{alimento.tipo}}</td>
           <td>{{alimento.name}}</td>
-          <td>{{alimento.quantidade}}</td>
+          <td>100g</td>
+          <td>{{alimento.proteina}}</td>
+          <td>{{alimento.carboidrato}}</td>
+          <td>{{alimento.gordura}}</td>
           <td>{{alimento.calorias}}</td>
         </tr>
       </tbody>

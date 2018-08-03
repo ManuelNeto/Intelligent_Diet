@@ -7,18 +7,18 @@ import {Diet} from '../models/Diet';
 export class DietService {
 
   private API;
-  diets;
+  diet: Diet;
 
   constructor(private http: HttpClient) {
     this.API = `${environment.apiUrl}/diet`;
   }
 
-  setDiets(diets) {
-    this.diets = diets;
+  setDiet(diet) {
+    this.diet = diet;
   }
 
-  getDiets() {
-    return this.diets;
+  getDiet() {
+    return this.diet;
   }
 
   getDietById(id) {

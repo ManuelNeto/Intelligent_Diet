@@ -95,18 +95,43 @@ export class PreferencesComponent implements OnInit {
     return selectedFood;
   }
 
+  selectAll(type) {
+    if(type==='protein'){
+      this.myProteinOptions.forEach((food) => {
+        this.proteinOptionsIds.push(food.id);
+      });
+    }
+    else if(type==='pasta'){
+      this.myPastaOptions.forEach((food) => {
+        this.pastaOptionsIds.push(food.id);
+      });
+    }
+    else if(type==='fiber'){
+      this.myFiberOptions.forEach((food) => {
+        this.fiberOptionsIds.push(food.id);
+      });
+    }
+    else if(type==='fruit'){
+      this.myFruitOptions.forEach((food) => {
+        this.fruitOptionsIds.push(food.id);
+      });
+    }
+    if(type==='vegetable'){
+      this.myVegetableOptions.forEach((food) => {
+        this.vegetableOptionsIds.push(food.id);
+      });
+    }
+  }
+
   generateDiet() {
-    let diets;
     let protein = this.userService.getUser().protein;
     let fat = this.userService.getUser().fat;
     let carbo = this.userService.getUser().carbo;
     let info = { preferences: this.getSelectedFood(), protein: protein, fat: fat, carbo: carbo}
     this.httpClient.post('http://127.0.0.1:5002/generateDiet', info).subscribe(data => {
-      diets = data;
-      console.log(diets);
-      this.dietService.setDiets(diets);
-      // this.router.navigate(['/diet']);
+      this.dietService.setDiet(data);
+      console.log(data);
+      this.router.navigate(['/diet']);
     });
-
   }
 }

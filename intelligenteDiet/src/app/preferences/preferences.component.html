@@ -7,40 +7,45 @@
       <div>
         <label class="control-label" for="type" translate> Proteínas </label>
       </div>
-      <div>
-        <ss-multiselect-dropdown [options]="myProteinOptions" name="proteins" [(ngModel)]="proteinOptionsIds"></ss-multiselect-dropdown>
+      <div class="row">
+        <ss-multiselect-dropdown class="selectBox" [options]="myProteinOptions" name="proteins" [(ngModel)]="proteinOptionsIds"></ss-multiselect-dropdown>
+        <p class="selectAll" (click)="selectAll('protein')"><mat-icon style="margin-top: 8px">done_all</mat-icon>select all</p>
       </div>
     </div>
     <div class="form-group">
       <div>
         <label class="control-label" for="type" translate> Caboidratos </label>
       </div>
-      <div>
-        <ss-multiselect-dropdown [options]="myPastaOptions" name="massas" [(ngModel)]="pastaOptionsIds"></ss-multiselect-dropdown>
+      <div class="row">
+        <ss-multiselect-dropdown class="selectBox" [options]="myPastaOptions" name="massas" [(ngModel)]="pastaOptionsIds"></ss-multiselect-dropdown>
+        <p class="selectAll" (click)="selectAll('pasta')"><mat-icon style="margin-top: 8px">done_all</mat-icon>select all</p>
       </div>
     </div>
     <div class="form-group">
       <div>
         <label class="control-label" for="type" translate> Fibras </label>
       </div>
-      <div>
-        <ss-multiselect-dropdown [options]="myFiberOptions" name="fibras" [(ngModel)]="fiberOptionsIds"></ss-multiselect-dropdown>
+      <div class="row">
+        <ss-multiselect-dropdown class="selectBox" [options]="myFiberOptions" name="fibras" [(ngModel)]="fiberOptionsIds"></ss-multiselect-dropdown>
+        <p class="selectAll" (click)="selectAll('fiber')"><mat-icon style="margin-top: 8px">done_all</mat-icon>select all</p>
       </div>
     </div>
     <div class="form-group">
       <div>
         <label class="control-label" for="type" translate> Legumes </label>
       </div>
-      <div>
-        <ss-multiselect-dropdown [options]="myVegetableOptions" name="legumes" [(ngModel)]="vegetableOptionsIds"></ss-multiselect-dropdown>
+      <div class="row">
+        <ss-multiselect-dropdown class="selectBox" [options]="myVegetableOptions" name="legumes" [(ngModel)]="vegetableOptionsIds"></ss-multiselect-dropdown>
+        <p class="selectAll" (click)="selectAll('vegetable')"><mat-icon style="margin-top: 8px">done_all</mat-icon>select all</p>
       </div>
     </div>
     <div class="form-group">
       <div>
         <label class="control-label" for="type" translate> Frutas </label>
       </div>
-      <div>
-        <ss-multiselect-dropdown [options]="myFruitOptions" name="frutas" [(ngModel)]="fruitOptionsIds"></ss-multiselect-dropdown>
+      <div class="row">
+        <ss-multiselect-dropdown class="selectBox" [options]="myFruitOptions" name="frutas" [(ngModel)]="fruitOptionsIds"></ss-multiselect-dropdown>
+        <p class="selectAll" (click)="selectAll('fruit')"><mat-icon style="margin-top: 8px">done_all</mat-icon>select all</p>
       </div>
     </div>
     <div>
