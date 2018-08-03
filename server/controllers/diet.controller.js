@@ -2,6 +2,8 @@ var Diet = require("../models/diet.model");
 
 
 exports.save = async function (req,res){
+    console.log("@@@@@@@@@@");
+
     var diet = new Diet(req.body);
     diet.save(function(err){
         if (err) {

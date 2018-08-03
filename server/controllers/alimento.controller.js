@@ -13,6 +13,8 @@ exports.save = async function (req,res){
     })
 }
 
+
+
 exports.get = async function (req,res){
     Alimento.find({}, (err, alimentos)=>{
         if(err){

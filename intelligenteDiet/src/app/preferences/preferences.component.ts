@@ -1,7 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { IMultiSelectOption } from 'angular-2-dropdown-multiselect';
 import {UserService} from '../services/user.service';
-import {Router} from '@angular/router';
+import {Data, Router} from '@angular/router';
+import {AlimentoService} from '../services/alimento.service';
+import {Alimento} from '../models/Alimento';
+import {DietService} from '../services/diet.service';
+import {Diet} from '../models/Diet';
+import {HttpClient} from '@angular/common/http';
+import {containsElement} from '@angular/animations/browser/src/render/shared';
 
 
 @Component({
@@ -11,82 +17,93 @@ import {Router} from '@angular/router';
 })
 export class PreferencesComponent implements OnInit {
 
-  proteinOptions: number[];
+  proteinOptionsIds: string[];
   myProteinOptions: IMultiSelectOption[];
 
-  pastaOptions: number[];
+  pastaOptionsIds: string[];
   myPastaOptions: IMultiSelectOption[];
 
-  fiberOptions: number[];
+  fiberOptionsIds: string[];
   myFiberOptions: IMultiSelectOption[];
 
-  vegetableOptions: number[];
+  vegetableOptionsIds: string[];
   myVegetableOptions: IMultiSelectOption[];
 
-  fruitOptions: number[];
+  fruitOptionsIds: string[];
   myFruitOptions: IMultiSelectOption[];
 
   constructor(private userService: UserService,
-              private router: Router) { }
+              private alimentoService: AlimentoService,
+              private dietService: DietService,
+              private router: Router,
+              private httpClient: HttpClient) { }
 
   ngOnInit() {
-      console.log(this.userService.getUser());
-        this.myProteinOptions = [
-            { id: 1, name: 'Queijo coalho'},
-            { id: 2, name: 'Queijo minas'},
-            { id: 3, name: 'Ovo mexido' },
-            { id: 4, name: 'Creme de ricota'},
-            { id: 5, name: 'Geleia diet'},
-            { id: 6, name: 'Frango desfiado'},
-            { id: 7, name: 'Peixe grelhado'},
-            { id: 8, name: 'Carne magra'},
-            { id: 9, name: 'Omelete'}
-        ];
+    this.fetchAlimentos();
+  }
 
-        this.myPastaOptions = [
-            { id: 1, name: 'Tapioca'},
-            { id: 2, name: 'Pão 12 grãos'},
-            { id: 3, name: 'Rap 10 integral' },
-            { id: 4, name: 'Torrada multigrãos'},
-            { id: 5, name: 'Batata doce'},
-            { id: 6, name: 'Jerimum'},
-            { id: 7, name: 'Macaxeira'},
-            { id: 8, name: 'Inhame'},
-            { id: 9, name: 'Arroz branco'},
-            { id: 10, name: 'Macarrão integral'},
-        ];
+  fetchAlimentos() {
+    this.alimentoService.getAlimentosByType('proteina').subscribe(
+      (data: Data) => {
+        this.myProteinOptions = data.data;
+        this.myProteinOptions = this.mapIds(this.myProteinOptions);
+      }
+    );
+    this.alimentoService.getAlimentosByType('carboidrato').subscribe(
+      (data: Data) => {
+        this.myPastaOptions = data.data;
+        this.myPastaOptions = this.mapIds(this.myPastaOptions);
+      }
+    );
+    this.alimentoService.getAlimentosByType('fruta').subscribe(
+      (data: Data) => {
+        this.myFruitOptions = data.data;
+        this.myFruitOptions = this.mapIds(this.myFruitOptions);
+      }
+    );
+    this.alimentoService.getAlimentosByType('fibra').subscribe(
+      (data: Data) => {
+        this.myFiberOptions = data.data;
+        this.myFiberOptions = this.mapIds(this.myFiberOptions);
+      }
+    );
+    this.alimentoService.getAlimentosByType('legume').subscribe(
+      (data: Data) => {
+        this.myVegetableOptions = data.data;
+        this.myVegetableOptions = this.mapIds(this.myVegetableOptions);
+      }
+    );
+  }
 
-        this.myFiberOptions = [
-            { id: 1, name: 'Castanha de caju'},
-            { id: 2, name: 'Cookies integrais'},
-            { id: 3, name: 'Ameixa seca' },
-            { id: 4, name: 'Castranha do pará'},
-            { id: 5, name: 'Amendoas'},
-            { id: 6, name: 'Barra de fibras com sementes nutis'},
-            { id: 7, name: 'Peixe grelhado'},
-            { id: 8, name: 'Carne magra'},
-            { id: 9, name: 'Omelete'},
-        ];
+  mapIds(options) {
+    for(let i = 0; i<options.length; i++) {
+      options[i].id = options[i]._id;
+    }
+    return options;
+  }
 
-        this.myFruitOptions = [
-            { id: 1, name: 'Maça'},
-            { id: 2, name: 'Pêra'},
-            { id: 3, name: 'Goiaba' },
-            { id: 4, name: 'Banana'},
-            { id: 5, name: 'Tangerina'},
-            { id: 6, name: 'Ameixa'},
-            { id: 7, name: 'Mamão'},
-            { id: 8, name: 'Abacaxi'},
-            { id: 9, name: 'Laranja'},
-        ];
+  getSelectedFood() {
+    let allFood = this.myPastaOptions.concat(this.myProteinOptions, this.myFiberOptions, this.myFruitOptions, this.myVegetableOptions);
+    let selectedFoodIds = this.pastaOptionsIds.concat(this.proteinOptionsIds, this.fiberOptionsIds, this.fruitOptionsIds, this.vegetableOptionsIds);
+    let selectedFood = [];
+    allFood.forEach((food) => {
+      if(selectedFoodIds.some(id => id === food.id)) {
+        selectedFood.push(food);
+      }
+    })
+    return selectedFood;
   }
 
   generateDiet() {
-    this.router.navigate(['/diet']);
-  }
+    let diets;
+    let info = this.userService.getUser();
+    info.prefereces = this.getSelectedFood();
 
-  onChange(event) {
-    console.log(event);
-  }
+    this.httpClient.post('http://127.0.0.1:5002/generateDiet', info).subscribe(data => {
+      diets = JSON.parse(data.toString());
+      this.dietService.setDiets(diets);
+      this.router.navigate(['/diet']);
+    });
 
+  }
 }

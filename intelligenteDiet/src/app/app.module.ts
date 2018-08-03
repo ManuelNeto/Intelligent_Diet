@@ -19,6 +19,8 @@ import {
   MatSidenavModule,
   MatListModule,
 } from '@angular/material';
+import {AlimentoService} from './services/alimento.service';
+import {DietService} from './services/diet.service';
 
 
 @NgModule({
@@ -34,7 +36,6 @@ import {
     MatListModule,
     MatButtonModule,
     HttpClientModule
-
   ],
   declarations: [
     AppComponent,
@@ -44,6 +45,6 @@ import {
     HeaderComponent
   ],
   bootstrap: [ AppComponent ],
-  providers: [UserService]
+  providers: [UserService, AlimentoService, DietService]
 })
 export class AppModule { }
